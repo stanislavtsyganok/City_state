@@ -16,6 +16,7 @@ public class Act_game_results extends Activity {
 		Intent intent = getIntent();
 		
 		players = intent.getParcelableArrayListExtra("players");
+		setContentView(R.layout.results);
 		
 	}
 }

@@ -12,8 +12,10 @@
         android:gravity="center" />
 
     <TableLayout
+        android:id="@+id/result_table"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:stretchColumns="0" >
 
         <TableRow
         android:id="@+id/result_line"
@@ -25,8 +27,7 @@
             android:id="@+id/pName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pName"
-            android:layout_weight="1" />
+            android:text="@string/pName" />
 
         <TextView
             android:id="@+id/builded"
@@ -45,8 +46,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/money" />
+        
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/points" />
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/btnBackRes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnBack" />
 
 </LinearLayout>

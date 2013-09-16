@@ -18,6 +18,7 @@ public class Act_building extends Activity {
 	
 	TextView cointsTV;
 	Button nextTurnBtn;
+	Button observeBtn;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class Act_building extends Activity {
 		TextView cointsTV = (TextView) findViewById(R.id.moneyAmount);
 		cointsTV.setText(String.valueOf(players.get(iterator_turn).getGoldAmount()));
 		
+		observeBtn = (Button) findViewById(R.id.players_obs_btn);
 		nextTurnBtn = (Button) findViewById(R.id.end_turn_btn);
 		
 		LinearLayout buildedL = (LinearLayout) findViewById(R.id.buildedLL);
@@ -48,6 +50,8 @@ public class Act_building extends Activity {
 		
 		final Intent next_intent_cycle = new Intent(this, Act_player_invite.class);
 		final Intent next_intent_new_turn = new Intent(this, Act_game_screen.class);
+		final Intent next_intent_obs = new Intent(this, Act_other_players.class);
+		
 				
 		gameF.setBuldingScreen(buildedL, inHandL, players, openedRoleTurn, gameRoleDeck, gameBuildingDeck, builded, iterator_turn, this);
 		
@@ -55,15 +59,19 @@ public class Act_building extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				Intent next_intent = new Intent();
+				
 				switch (v.getId()) {
 				/*case R.id.special_btn:
 					
-					break;
-				case R.id.players_obs_btn:
-					
 					break;*/
+				case R.id.players_obs_btn:
+					next_intent = next_intent_obs;
+					next_intent.putExtra("players", players);
+					startActivity(next_intent);
+					
+					break;
 				case R.id.end_turn_btn:
-					Intent next_intent = new Intent();
 					
 					if(iterator_turn<players.size()-1){
 						
@@ -92,6 +100,8 @@ public class Act_building extends Activity {
 		};
 
 		nextTurnBtn.setOnClickListener(ocl);
+		observeBtn.setOnClickListener(ocl);
+		
 	}
 	
 	public void refresh(){}

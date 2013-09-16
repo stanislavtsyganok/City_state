@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.MonthDisplayHelper;
 
 public class Player implements Parcelable{
 	//Logger log = Logger.getLogger(Act_game_screen.class.getName());
@@ -75,6 +76,11 @@ public class Player implements Parcelable{
 	
 	public int getPlayerId(){
 		return playerId;
+	}
+	
+	public String[] getDataForTable(){
+		String [] tmpStr = {playerName, String.valueOf(builded.size()), String.valueOf(inHandBuildings.size()), String.valueOf(coinsNumber), String.valueOf(points)};
+		return tmpStr;
 	}
 	
 	public void build(Building building){

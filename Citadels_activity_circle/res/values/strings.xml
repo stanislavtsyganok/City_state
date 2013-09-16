@@ -7,10 +7,13 @@
     <string name="New_game">New Game</string>
     <string name="Settings">Settings</string>
     <string name="players_nubmer">Enter players number</string>
+   
     <string name="pName">Имя игрока</string>
     <string name="builded">Зданий</string>       
     <string name="plans">Чертежи</string>       
-    <string name="money">Денег</string>       
+    <string name="money">Денег</string>
+    <string name="points">Очков</string>
+    <string name="btnBack">Назад</string>
     
     <string name="takingTwoThousands">Беру 2 тысячи</string> 
     <string name="takingTwoPlans">Беру 2 чертежа</string>

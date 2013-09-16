@@ -37,6 +37,8 @@ public class Act_player_invite extends Activity {
 		  ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
 		  		  
 		  int iterator_turn = intent.getIntExtra("iterator_turn", 0);
+		  final boolean isLastTurn = intent.getBooleanExtra("isLastTurn", false);
+			
 		  
 		  LinearLayout.LayoutParams lpMatchContent = new LinearLayout.LayoutParams (LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		  lpMatchContent.gravity = Gravity.LEFT;
@@ -47,6 +49,7 @@ public class Act_player_invite extends Activity {
 		  linL.addView(tv);
 		  
 		  final Intent next_intent = new Intent(this, Act_action_choice.class);
+		  next_intent.putExtra("isLastTurn", isLastTurn);
 		  next_intent.putExtra("iterator_turn", iterator_turn);
 		  next_intent.putExtra("gameRoleDeck", gameRoleDeck);
 		  next_intent.putExtra("openedRoleTurn", openedRoleTurn);

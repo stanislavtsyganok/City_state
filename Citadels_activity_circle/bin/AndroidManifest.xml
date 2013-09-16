@@ -31,6 +31,8 @@
         <activity android:name="Act_action_choice"></activity>
         <activity android:name="Act_building"></activity>
         <activity android:name="Act_game_roles"></activity>
+        <activity android:name="Act_game_results"></activity>
+        <activity android:name="Act_other_players"></activity>
     </application>
 
 </manifest>

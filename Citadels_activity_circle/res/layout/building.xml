@@ -15,13 +15,12 @@
             android:id="@+id/moneyAmountText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Монет на счету: "/>
+            android:text="@string/moneyAmount"/>
 
         <TextView
             android:id="@+id/moneyAmount"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"/>
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
     
@@ -36,7 +35,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Кварталы в руке"
+            android:text="@string/plans"
             android:gravity="center" />
     </LinearLayout>
     
@@ -51,7 +50,7 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Построенные кварталы"
+            android:text="@string/constructed"
             android:gravity="center" />
 
     </LinearLayout>
@@ -66,7 +65,7 @@
             android:id="@+id/special_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Спец. возможность"
+            android:text="@string/btnSpecial"
             android:layout_weight="1"
             android:enabled="false" />
 
@@ -74,15 +73,14 @@
             android:id="@+id/players_obs_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Другие игроки"
-            android:layout_weight="1"
-            android:enabled="false" />
+            android:text="@string/btnOtherPlayers"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/end_turn_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Конец хода"
+            android:text="@string/btnTurnEnd"
             android:layout_weight="0.8" />
 
     </LinearLayout>

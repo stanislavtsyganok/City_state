@@ -52,20 +52,7 @@ public class Act_players_number extends Activity{
 			});
 	    	 
 		  }
-		  
-		  /*players_number = (EditText) findViewById(R.id.players_number);
-		  btn_pn_next = (Button) findViewById(R.id.pn_next); 
-	   
-		  OnClickListener onbc_pn_next = new OnClickListener(){
-				@Override
-				public void onClick(View v) {
-						  Intent intent = new Intent(Act_players_number.this, Act_game_screen.class);
-						  intent.putExtra("players_num",players_number.getText().toString());
-						  startActivity(intent);
-					
-				}
-		  };
-		  btn_pn_next.setOnClickListener(onbc_pn_next);*/
+
 	  }
 	  
 	  

@@ -25,25 +25,23 @@ public final class R {
     }
     public static final class id {
         public static final int Settings=0x7f080004;
-        public static final int action_settings=0x7f080018;
+        public static final int action_settings=0x7f080016;
         public static final int btn_cards=0x7f080001;
         public static final int btn_gold=0x7f080000;
-        public static final int builded=0x7f080015;
+        public static final int builded=0x7f080013;
         public static final int buildedLL=0x7f080009;
         public static final int end_turn_btn=0x7f08000d;
-        public static final int inHand=0x7f080016;
+        public static final int inHand=0x7f080014;
         public static final int inHandLL=0x7f080007;
-        public static final int money=0x7f080017;
+        public static final int money=0x7f080015;
         public static final int moneyAmount=0x7f080006;
         public static final int moneyAmountText=0x7f080005;
         public static final int new_game=0x7f080002;
         public static final int next_turn_btn=0x7f08000f;
-        public static final int pName=0x7f080014;
-        public static final int players_number=0x7f080010;
+        public static final int pName=0x7f080012;
         public static final int players_obs_btn=0x7f08000c;
-        public static final int pn_next=0x7f080011;
-        public static final int result_line=0x7f080013;
-        public static final int result_title=0x7f080012;
+        public static final int result_line=0x7f080011;
+        public static final int result_title=0x7f080010;
         public static final int special_btn=0x7f08000b;
         public static final int test_view=0x7f08000e;
         public static final int textView1=0x7f080003;
@@ -55,8 +53,7 @@ public final class R {
         public static final int activity_main_activity_fa=0x7f030001;
         public static final int building=0x7f030002;
         public static final int game_screen=0x7f030003;
-        public static final int new_game_players_num=0x7f030004;
-        public static final int results=0x7f030005;
+        public static final int results=0x7f030004;
     }
     public static final class menu {
         public static final int main_activity_fa=0x7f070000;
@@ -67,20 +64,19 @@ public final class R {
         public static final int Settings=0x7f050004;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int btnOtherPlayers=0x7f050010;
-        public static final int btnSpecial=0x7f05000f;
-        public static final int btnTurnEnd=0x7f050011;
-        public static final int builded=0x7f050008;
-        public static final int constructed=0x7f05000e;
-        public static final int money=0x7f05000a;
-        public static final int moneyAmount=0x7f05000d;
-        public static final int next=0x7f050006;
-        public static final int pName=0x7f050007;
-        public static final int plans=0x7f050009;
+        public static final int btnOtherPlayers=0x7f05000f;
+        public static final int btnSpecial=0x7f05000e;
+        public static final int btnTurnEnd=0x7f050010;
+        public static final int builded=0x7f050007;
+        public static final int constructed=0x7f05000d;
+        public static final int money=0x7f050009;
+        public static final int moneyAmount=0x7f05000c;
+        public static final int pName=0x7f050006;
+        public static final int plans=0x7f050008;
         public static final int players_nubmer=0x7f050005;
-        public static final int takingTwoPlans=0x7f05000c;
-        public static final int takingTwoThousands=0x7f05000b;
-        public static final int tmp=0x7f050012;
+        public static final int takingTwoPlans=0x7f05000b;
+        public static final int takingTwoThousands=0x7f05000a;
+        public static final int tmp=0x7f050011;
     }
     public static final class style {
         /** 

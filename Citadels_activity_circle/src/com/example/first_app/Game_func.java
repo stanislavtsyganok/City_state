@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.Context;
 import android.database.Cursor;
-import android.sax.StartElementListener;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -172,12 +171,13 @@ public class Game_func {
 					
 					@Override
 					public void onClick(View v) {
-						players.get(iterator_turn).build(tmpBuilding);
-						intent_refresh .putExtra("iterator_turn", iterator_turn);
-						intent_refresh .putExtra("gameRoleDeck", gameRoleDeck);
-						intent_refresh .putExtra("gameBuildingDeck", gameBuildingDeck);
-						intent_refresh .putExtra("players", players);
-						intent_refresh .putExtra("builded", builded+1);
+						boolean lastTurn = players.get(iterator_turn).build(tmpBuilding);
+						intent_refresh.putExtra("iterator_turn", iterator_turn);
+						intent_refresh.putExtra("gameRoleDeck", gameRoleDeck);
+						intent_refresh.putExtra("gameBuildingDeck", gameBuildingDeck);
+						intent_refresh.putExtra("players", players);
+						intent_refresh.putExtra("builded", builded+1);
+						intent_refresh.putExtra("isLastTurn", lastTurn);
 						context.startActivity(intent_refresh);
 						((Activity) context).finish();
 

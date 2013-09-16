@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.util.MonthDisplayHelper;
 
 public class Player implements Parcelable{
 	//Logger log = Logger.getLogger(Act_game_screen.class.getName());
@@ -21,6 +20,7 @@ public class Player implements Parcelable{
 	private int isCrowned ;
 	
 	Game_func gameFunction;
+	private int maxBuilding = 2;
 		
 	Player(int id, String pName, ArrayList<Building> buildingDeck, int isC){
 		playerId = id;
@@ -78,16 +78,21 @@ public class Player implements Parcelable{
 		return playerId;
 	}
 	
+	public int getPlayerPoints(){
+		return points;
+	}
+	
 	public String[] getDataForTable(){
 		String [] tmpStr = {playerName, String.valueOf(builded.size()), String.valueOf(inHandBuildings.size()), String.valueOf(coinsNumber), String.valueOf(points)};
 		return tmpStr;
 	}
 	
-	public void build(Building building){
+	public boolean build(Building building){
 		points += building.getCost();
 		coinsNumber -= building.getCost();
 		builded.add(building);
 		inHandBuildings.remove(building);
+		return builded.size()>=maxBuilding;
 	}
 	
 	

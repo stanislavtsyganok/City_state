@@ -27,7 +27,6 @@ public class Act_action_choice extends Activity {
 	    btnChooseCards = (Button) findViewById(R.id.btn_cards);
 	    
 		Intent intent = getIntent();
-		  
 		 
 		ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
 		ArrayList<Role> gameRoleDeckTurn = intent.getParcelableArrayListExtra("gameRoleDeckTurn");
@@ -36,8 +35,11 @@ public class Act_action_choice extends Activity {
 		  
 		final ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
 		final int iterator_turn = intent.getIntExtra("iterator_turn", 0);
+		final boolean isLastTurn = intent.getBooleanExtra("isLastTurn", false);
+		
 		  
 		final Intent next_intent = new Intent(this, Act_building.class);
+		next_intent.putExtra("isLastTurn", isLastTurn);
 		next_intent.putExtra("iterator_turn", iterator_turn);
 		next_intent.putExtra("gameRoleDeck", gameRoleDeck);
 		next_intent.putExtra("openedRoleTurn", openedRoleTurn);

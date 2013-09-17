@@ -9,8 +9,8 @@ import android.os.Bundle;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 
-public class Act_role_choice extends Activity {
-	Logger log = Logger.getLogger(Act_game_screen.class.getName());
+public class Act_4_2_role_choice extends Activity {
+	Logger log = Logger.getLogger(Act_4_1_circle_begining.class.getName());
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){

@@ -14,8 +14,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Act_building extends Activity {
-	Logger log = Logger.getLogger(Act_game_screen.class.getName());
+public class Act_4_3_3_building extends Activity {
+	Logger log = Logger.getLogger(Act_4_1_circle_begining.class.getName());
 	
 	
 	TextView cointsTV;
@@ -51,8 +51,8 @@ public class Act_building extends Activity {
 		LinearLayout inHandL = (LinearLayout) findViewById(R.id.inHandLL);
 		
 		
-		final Intent next_intent_cycle = new Intent(this, Act_player_invite.class);
-		final Intent next_intent_new_turn = new Intent(this, Act_game_screen.class);
+		final Intent next_intent_cycle = new Intent(this, Act_4_3_1_player_invite.class);
+		final Intent next_intent_new_turn = new Intent(this, Act_4_1_circle_begining.class);
 		final Intent next_intent_obs = new Intent(this, Act_other_players.class);
 		final Intent next_intent_game_results = new Intent(this, Act_other_players.class);
 				

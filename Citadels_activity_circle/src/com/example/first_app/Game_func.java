@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Game_func {
-	 Logger log = Logger.getLogger(Act_game_screen.class.getName());
+	 Logger log = Logger.getLogger(Act_4_1_circle_begining.class.getName());
 	 	
 	 Citadels_dao cDao;
 	 static final int DeckCap = 8;
@@ -108,8 +108,8 @@ public class Game_func {
 	      tv.setLayoutParams(lpMatchContent);
 	      linealL.addView(tv);
 	      
-	      final Intent intent_r = new Intent(context, Act_role_choice.class);
-	      final Intent intent_n = new Intent(context, Act_player_invite.class);
+	      final Intent intent_r = new Intent(context, Act_4_2_role_choice.class);
+	      final Intent intent_n = new Intent(context, Act_4_3_1_player_invite.class);
 	      
       
 	      for(int i=0; i<gameRoleDeckTurn.size();i++){//TODO отладить для 7 игроков
@@ -162,7 +162,7 @@ public class Game_func {
 			 final Button btn = new Button(context);
 			 btn.setText(tmpBuildings.get(i).getName()+", "+tmpBuildings.get(i).getColor()+", "+tmpBuildings.get(i).getCost());
 			 inHandL.addView(btn, lpMatchContent);
-			 final Intent intent_refresh = new Intent(context, Act_building.class);
+			 final Intent intent_refresh = new Intent(context, Act_4_3_3_building.class);
 			 if(tmpBuildings.get(i).getCost()>players.get(iterator_turn).getGoldAmount() || builded!=0)
 				 btn.setEnabled(false);
 			 else{

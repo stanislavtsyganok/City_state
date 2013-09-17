@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Act_players_number extends Activity{
+public class Act_2_players_number extends Activity{
 		
 	  EditText players_number;
 	  Button btn_pn_next;	
@@ -34,7 +34,7 @@ public class Act_players_number extends Activity{
 	      tv.setLayoutParams(lpMatchContent);
 	      linLayout.addView(tv);
 	      
-	      final Intent intent = new Intent(this, Act_game_roles.class);
+	      final Intent intent = new Intent(this, Act_3_game_roles.class);
 	     
 	      for(int i=4; i<8; i++){
 			  Button btn = new Button(this);

@@ -7,8 +7,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class Act_game_roles extends Activity {
-	Logger log = Logger.getLogger(Act_game_screen.class.getName());
+public class Act_3_game_roles extends Activity {
+	Logger log = Logger.getLogger(Act_4_1_circle_begining.class.getName());
 	  
 	Game_func gameFunction;
 	ArrayList<Role> gameRoleDeck;
@@ -36,7 +36,7 @@ public class Act_game_roles extends Activity {
 			players.add(new Player(i, "Player "+i, gameBuildingDeck, isC));
 		}
 		
-		intent = new Intent(this, Act_game_screen.class);
+		intent = new Intent(this, Act_4_1_circle_begining.class);
 		  
 		intent.putExtra("gameRoleDeck", gameRoleDeck);
 		intent.putExtra("gameBuildingDeck", gameBuildingDeck);

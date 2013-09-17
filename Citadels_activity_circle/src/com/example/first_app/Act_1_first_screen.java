@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class Act_first_screen extends Activity {
+public class Act_1_first_screen extends Activity {
 
 	Button btn_new_game;
 	Button btn_setting;
@@ -25,7 +25,7 @@ public class Act_first_screen extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(Act_first_screen.this, Act_players_number.class);
+				Intent intent = new Intent(Act_1_first_screen.this, Act_2_players_number.class);
 				startActivity(intent);
 			}
         	

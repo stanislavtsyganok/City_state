@@ -11,8 +11,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 //TODO кол-во золота и карт
 
-public class Act_action_choice extends Activity {
-	Logger log = Logger.getLogger(Act_game_screen.class.getName());
+public class Act_4_3_2_action_choice extends Activity {
+	Logger log = Logger.getLogger(Act_4_1_circle_begining.class.getName());
 	
 	Button btnChooseGold;
 	Button btnChooseCards;
@@ -38,7 +38,7 @@ public class Act_action_choice extends Activity {
 		final boolean isLastTurn = intent.getBooleanExtra("isLastTurn", false);
 		
 		  
-		final Intent next_intent = new Intent(this, Act_building.class);
+		final Intent next_intent = new Intent(this, Act_4_3_3_building.class);
 		next_intent.putExtra("isLastTurn", isLastTurn);
 		next_intent.putExtra("iterator_turn", iterator_turn);
 		next_intent.putExtra("gameRoleDeck", gameRoleDeck);

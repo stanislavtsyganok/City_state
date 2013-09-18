@@ -36,10 +36,15 @@ public class Act_4_1_circle_begining extends Activity{
 		  
 		  Intent intent = getIntent();
 		  
-		  ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
-		  ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
+		  //ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
+		  //ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
 		  
-		  ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
+		  //ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
+		  
+		  ArrayList<Role> gameRoleDeck = ((CityApp)getApplication()).getRoleDeck();
+		  ArrayList<Building> gameBuildingDeck = ((CityApp)getApplication()).getBuildingDeck();
+		  
+		  ArrayList<Player> players = ((CityApp)getApplication()).getPlayers();
 		  
 		  gameFunction = new Game_func(this);
 		  
@@ -56,6 +61,8 @@ public class Act_4_1_circle_begining extends Activity{
 		  gameRoleDeckTurn.trimToSize();
 		  
 		  final Intent intent_next = new Intent(Act_4_1_circle_begining.this, Act_4_2_role_choice.class);
+		  
+		  ((CityApp)getApplication()).setOpenedRoles(openedRoleTurn);
 		  
 		  intent_next.putExtra("gameRoleDeck", gameRoleDeck);
 		  intent_next.putExtra("openedRoleTurn", openedRoleTurn);

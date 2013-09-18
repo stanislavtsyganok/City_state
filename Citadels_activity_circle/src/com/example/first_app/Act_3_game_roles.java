@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -37,10 +38,12 @@ public class Act_3_game_roles extends Activity {
 		}
 		
 		intent = new Intent(this, Act_4_1_circle_begining.class);
+		
+		((CityApp)getApplication()).setGlobalVar(gameBuildingDeck, gameRoleDeck, players);
 		  
-		intent.putExtra("gameRoleDeck", gameRoleDeck);
-		intent.putExtra("gameBuildingDeck", gameBuildingDeck);
-		intent.putExtra("players", players);
+		//intent.putExtra("gameRoleDeck", gameRoleDeck);
+		//intent.putExtra("gameBuildingDeck", gameBuildingDeck);
+		//intent.putExtra("players", players);
 		  
 		startActivity(intent);
 		finish();

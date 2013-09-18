@@ -87,31 +87,14 @@ public class Game_func {
 		 return randomCard;
 	 }
 	 
-	 public void setViewRoleChoise( final LinearLayout linealL, final ArrayList<Player> players, final ArrayList<Role> openedRoleTurn,  final ArrayList<Role> gameRoleDeck, final ArrayList<Role> gameRoleDeckTurn, final ArrayList<Building> gameBuildingDeck, final int iterator_role_choose,  final Context context){
+	 public void setViewRoleChoise( final LinearLayout linealL, final ArrayList<Player> players, final ArrayList<Role> gameRoleDeckTurn, final int iterator_role_choose,  final Context context){
 		 
 		  LinearLayout.LayoutParams lpMatchContent = new LinearLayout.LayoutParams (LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		  lpMatchContent.gravity = Gravity.LEFT;
 		  
-		  String openedRoles = "ќткрытые роли: ";
-		  for(int i=0; i<openedRoleTurn.size();i++)
-			  openedRoles += openedRoleTurn.get(i).getName()+", ";
-		  		  
-		  openedRoles = openedRoles.substring(0, openedRoles.length()-2)+".";
-	      
-		  TextView tv = new TextView(context);
-	      tv.setText(players.get(iterator_role_choose-1).getPlayerName()+" выбери роль.");
-	      tv.setLayoutParams(lpMatchContent);
-	      linealL.addView(tv);
-	      
-	      tv = new TextView(context);
-	      tv.setText(openedRoles);
-	      tv.setLayoutParams(lpMatchContent);
-	      linealL.addView(tv);
-	      
 	      final Intent intent_r = new Intent(context, Act_4_2_role_choice.class);
 	      final Intent intent_n = new Intent(context, Act_4_3_1_player_invite.class);
 	      
-      
 	      for(int i=0; i<gameRoleDeckTurn.size();i++){//TODO отладить дл€ 7 игроков
 	    	  final Role fnlRole = gameRoleDeckTurn.get(i);
 	    	  Button btn = new Button(context);
@@ -127,17 +110,19 @@ public class Game_func {
 	    			  gameRoleDeckTurn.remove(n);
 	    			  if(iterator_role_choose<players.size()){
 	    				  intent_tmp = intent_r;
-	    			  }
+	    				  intent_tmp.putExtra("gameRoleDeckTurn", gameRoleDeckTurn);
+	    				  intent_tmp.putExtra("iterator_role_choose", iterator_role_choose);
+		    			  
+			    	  }
 	    			  else{
 	    				  intent_tmp = intent_n;
 		    			  Collections.sort(players, new PlayerCompereRole());
 	    			  }
-	    			  intent_tmp.putExtra("iterator_role_choose", iterator_role_choose);
-	    			  intent_tmp.putExtra("gameRoleDeck", gameRoleDeck);
-	    			  intent_tmp.putExtra("openedRoleTurn", openedRoleTurn);
-		    		  intent_tmp.putExtra("gameRoleDeckTurn", gameRoleDeckTurn);
-		    		  intent_tmp.putExtra("gameBuildingDeck", gameBuildingDeck);
-		    		  intent_tmp.putExtra("players", players);
+	    			  //intent_tmp.putExtra("gameRoleDeck", gameRoleDeck);
+	    			  //intent_tmp.putExtra("openedRoleTurn", openedRoleTurn);
+		    		  //intent_tmp.putExtra("gameBuildingDeck", gameBuildingDeck);
+		    		  //intent_tmp.putExtra("players", players);
+	    			  ((CityApp)((Activity) context).getApplication()).setPlayers(players);
 		    		  context.startActivity(intent_tmp);
 		    		  ((Activity) context).finish();
 	
@@ -152,7 +137,7 @@ public class Game_func {
 	 }*/
 	 
 	 
-	 public void setBuldingScreen( final LinearLayout buildedL, final LinearLayout inHandL, final ArrayList<Player> players, final ArrayList<Role> openedRoleTurn,  final ArrayList<Role> gameRoleDeck, final ArrayList<Building> gameBuildingDeck,final int builded , final int iterator_turn, final Context context){
+	 public void setBuldingScreen( final LinearLayout buildedL, final LinearLayout inHandL, final ArrayList<Player> players,final int builded , final int iterator_turn, final Context context){
 		 LinearLayout.LayoutParams lpMatchContent = new LinearLayout.LayoutParams (LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		 lpMatchContent.gravity = Gravity.LEFT;
 		  
@@ -171,13 +156,13 @@ public class Game_func {
 					
 					@Override
 					public void onClick(View v) {
-						boolean lastTurn = players.get(iterator_turn).build(tmpBuilding);
+						((CityApp)((Activity) context).getApplication()).setIsLast(players.get(iterator_turn).build(tmpBuilding));
 						intent_refresh.putExtra("iterator_turn", iterator_turn);
-						intent_refresh.putExtra("gameRoleDeck", gameRoleDeck);
-						intent_refresh.putExtra("gameBuildingDeck", gameBuildingDeck);
-						intent_refresh.putExtra("players", players);
+						//intent_refresh.putExtra("gameRoleDeck", gameRoleDeck);
+						//intent_refresh.putExtra("gameBuildingDeck", gameBuildingDeck);
+						//intent_refresh.putExtra("players", players);
 						intent_refresh.putExtra("builded", builded+1);
-						intent_refresh.putExtra("isLastTurn", lastTurn);
+						//intent_refresh.putExtra("isLastTurn", lastTurn);
 						context.startActivity(intent_refresh);
 						((Activity) context).finish();
 

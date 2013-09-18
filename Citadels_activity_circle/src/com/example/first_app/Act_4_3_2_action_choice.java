@@ -28,24 +28,26 @@ public class Act_4_3_2_action_choice extends Activity {
 	    
 		Intent intent = getIntent();
 		 
-		ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
-		ArrayList<Role> gameRoleDeckTurn = intent.getParcelableArrayListExtra("gameRoleDeckTurn");
-		ArrayList<Role> openedRoleTurn = intent.getParcelableArrayListExtra("openedRoleTurn");
-		final ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
+		//ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
+		//ArrayList<Role> openedRoleTurn = intent.getParcelableArrayListExtra("openedRoleTurn");
+		//final ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
 		  
-		final ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
+		//final ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
 		final int iterator_turn = intent.getIntExtra("iterator_turn", 0);
-		final boolean isLastTurn = intent.getBooleanExtra("isLastTurn", false);
+		//final boolean isLastTurn = intent.getBooleanExtra("isLastTurn", false);
+		final ArrayList<Player> players = ((CityApp)getApplication()).getPlayers();
+		final ArrayList<Building> gameBuildingDeck = ((CityApp)getApplication()).getBuildingDeck();
 		
+		((CityApp)getApplication()).setPlayers(players);
+		((CityApp)getApplication()).setBuildingDeck(gameBuildingDeck);
 		  
 		final Intent next_intent = new Intent(this, Act_4_3_3_building.class);
-		next_intent.putExtra("isLastTurn", isLastTurn);
+		//next_intent.putExtra("isLastTurn", isLastTurn);
 		next_intent.putExtra("iterator_turn", iterator_turn);
-		next_intent.putExtra("gameRoleDeck", gameRoleDeck);
-		next_intent.putExtra("openedRoleTurn", openedRoleTurn);
-		next_intent.putExtra("gameRoleDeckTurn", gameRoleDeckTurn);
-		next_intent.putExtra("gameBuildingDeck", gameBuildingDeck);
-		next_intent.putExtra("players", players);
+		//next_intent.putExtra("gameRoleDeck", gameRoleDeck);
+		//next_intent.putExtra("openedRoleTurn", openedRoleTurn);
+		//next_intent.putExtra("gameBuildingDeck", gameBuildingDeck);
+		//next_intent.putExtra("players", players);
 	    
 	    OnClickListener oncl_choice_sc = new OnClickListener() {
 			
@@ -54,6 +56,8 @@ public class Act_4_3_2_action_choice extends Activity {
 				switch (v.getId()) {
 				case R.id.btn_cards:
 					players.get(iterator_turn).pickTwoCards(gameBuildingDeck);
+					((CityApp)getApplication()).setPlayers(players);
+					((CityApp)getApplication()).setBuildingDeck(gameBuildingDeck);
 					startActivity(next_intent);
 					finish();
 					
@@ -61,6 +65,7 @@ public class Act_4_3_2_action_choice extends Activity {
 
 				case R.id.btn_gold:
 					players.get(iterator_turn).pickTwoCoins();
+					((CityApp)getApplication()).setPlayers(players);
 					startActivity(next_intent);
 					finish();
 			    		

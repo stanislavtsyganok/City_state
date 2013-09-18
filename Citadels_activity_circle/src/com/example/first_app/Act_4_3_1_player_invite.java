@@ -29,15 +29,14 @@ public class Act_4_3_1_player_invite extends Activity {
 		  
 		  Intent intent = getIntent();
 		  
-		  ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
-		  ArrayList<Role> gameRoleDeckTurn = intent.getParcelableArrayListExtra("gameRoleDeckTurn");
-		  ArrayList<Role> openedRoleTurn = intent.getParcelableArrayListExtra("openedRoleTurn");
-		  ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
+		  //ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
+		  //ArrayList<Role> openedRoleTurn = intent.getParcelableArrayListExtra("openedRoleTurn");
+		  //ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
 		  
-		  ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
+		  ArrayList<Player> players = ((CityApp)getApplication()).getPlayers();
 		  		  
 		  int iterator_turn = intent.getIntExtra("iterator_turn", 0);
-		  final boolean isLastTurn = intent.getBooleanExtra("isLastTurn", false);
+		  //final boolean isLastTurn = intent.getBooleanExtra("isLastTurn", false);
 			
 		  
 		  LinearLayout.LayoutParams lpMatchContent = new LinearLayout.LayoutParams (LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
@@ -49,13 +48,12 @@ public class Act_4_3_1_player_invite extends Activity {
 		  linL.addView(tv);
 		  
 		  final Intent next_intent = new Intent(this, Act_4_3_2_action_choice.class);
-		  next_intent.putExtra("isLastTurn", isLastTurn);
+		  //next_intent.putExtra("isLastTurn", isLastTurn);
 		  next_intent.putExtra("iterator_turn", iterator_turn);
-		  next_intent.putExtra("gameRoleDeck", gameRoleDeck);
-		  next_intent.putExtra("openedRoleTurn", openedRoleTurn);
-		  next_intent.putExtra("gameRoleDeckTurn", gameRoleDeckTurn);
-		  next_intent.putExtra("gameBuildingDeck", gameBuildingDeck);
-		  next_intent.putExtra("players", players);
+		  //next_intent.putExtra("gameRoleDeck", gameRoleDeck);
+		  //next_intent.putExtra("openedRoleTurn", openedRoleTurn);
+		  //next_intent.putExtra("gameBuildingDeck", gameBuildingDeck);
+		  //next_intent.putExtra("players", players);
 		  
 		  linL.setOnTouchListener(new OnTouchListener() {
 				

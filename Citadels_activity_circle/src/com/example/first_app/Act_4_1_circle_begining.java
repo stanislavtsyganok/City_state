@@ -36,22 +36,13 @@ public class Act_4_1_circle_begining extends Activity{
 		  
 		  Intent intent = getIntent();
 		  
-		  //ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
-		  //ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
-		  
-		  //ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
-		  
 		  ArrayList<Role> gameRoleDeck = ((CityApp)getApplication()).getRoleDeck();
-		  ArrayList<Building> gameBuildingDeck = ((CityApp)getApplication()).getBuildingDeck();
-		  
 		  ArrayList<Player> players = ((CityApp)getApplication()).getPlayers();
 		  
 		  gameFunction = new Game_func(this);
 		  
 		  Collections.sort(players, new PlayerCompareId());
-		 
 		  gameRoleDeckTurn = gameFunction.CreateRoleDeckTurn(gameRoleDeck, players.size());
-		  
 		  openedRoleTurn = new ArrayList <Role>();
 		  
 		  for (int i=0; i<8-players.size()-2;i++){
@@ -64,11 +55,7 @@ public class Act_4_1_circle_begining extends Activity{
 		  
 		  ((CityApp)getApplication()).setOpenedRoles(openedRoleTurn);
 		  
-		  intent_next.putExtra("gameRoleDeck", gameRoleDeck);
-		  intent_next.putExtra("openedRoleTurn", openedRoleTurn);
 		  intent_next.putExtra("gameRoleDeckTurn", gameRoleDeckTurn);
-		  intent_next.putExtra("gameBuildingDeck", gameBuildingDeck);
-		  intent_next.putExtra("players", players);
 		  
 		  LinearLayout.LayoutParams lpMatchContent = new LinearLayout.LayoutParams (LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		  lpMatchContent.gravity = Gravity.LEFT;

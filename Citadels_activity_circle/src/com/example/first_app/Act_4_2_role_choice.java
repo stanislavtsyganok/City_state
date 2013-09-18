@@ -50,23 +50,7 @@ public class Act_4_2_role_choice extends Activity {
 	      tv.setLayoutParams(lpMatchContent);
 	      linL.addView(tv);
 		  
-		  
 		  Game_func gameF = new Game_func();
-		  
-		  //ArrayList<Building> gameBuildingDeck;
-		  //ArrayList<Role> gameRoleDeck;
-		  //ArrayList<Role> gameRoleDeckTurn;
-		  //ArrayList<Role> openedRoleTurn;
-		  
-		  //ArrayList<Player> players;
-		  
-		  //gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
-		  //openedRoleTurn = intent.getParcelableArrayListExtra("openedRoleTurn");
-		  //gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
-		  
-		  //players = intent.getParcelableArrayListExtra("players");
-		  		  
-
 		  
 		  gameF.setViewRoleChoise(linL, players, gameRoleDeckTurn, iterator_role_choose, this);
 		

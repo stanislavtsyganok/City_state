@@ -118,10 +118,6 @@ public class Game_func {
 	    				  intent_tmp = intent_n;
 		    			  Collections.sort(players, new PlayerCompereRole());
 	    			  }
-	    			  //intent_tmp.putExtra("gameRoleDeck", gameRoleDeck);
-	    			  //intent_tmp.putExtra("openedRoleTurn", openedRoleTurn);
-		    		  //intent_tmp.putExtra("gameBuildingDeck", gameBuildingDeck);
-		    		  //intent_tmp.putExtra("players", players);
 	    			  ((CityApp)((Activity) context).getApplication()).setPlayers(players);
 		    		  context.startActivity(intent_tmp);
 		    		  ((Activity) context).finish();
@@ -131,11 +127,7 @@ public class Game_func {
 	    	  });
 	      }
 	 }
-	 
-	 /*public void refreshInHandLL(LinearLayout buildedL, final LinearLayout inHandL, final Player player, Context context){
-		 
-	 }*/
-	 
+
 	 
 	 public void setBuldingScreen( final LinearLayout buildedL, final LinearLayout inHandL, final ArrayList<Player> players,final int builded , final int iterator_turn, final Context context){
 		 LinearLayout.LayoutParams lpMatchContent = new LinearLayout.LayoutParams (LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
@@ -158,11 +150,7 @@ public class Game_func {
 					public void onClick(View v) {
 						((CityApp)((Activity) context).getApplication()).setIsLast(players.get(iterator_turn).build(tmpBuilding));
 						intent_refresh.putExtra("iterator_turn", iterator_turn);
-						//intent_refresh.putExtra("gameRoleDeck", gameRoleDeck);
-						//intent_refresh.putExtra("gameBuildingDeck", gameBuildingDeck);
-						//intent_refresh.putExtra("players", players);
 						intent_refresh.putExtra("builded", builded+1);
-						//intent_refresh.putExtra("isLastTurn", lastTurn);
 						context.startActivity(intent_refresh);
 						((Activity) context).finish();
 

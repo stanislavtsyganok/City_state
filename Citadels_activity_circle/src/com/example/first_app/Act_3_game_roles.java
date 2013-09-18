@@ -41,10 +41,6 @@ public class Act_3_game_roles extends Activity {
 		
 		((CityApp)getApplication()).setGlobalVar(gameBuildingDeck, gameRoleDeck, players);
 		  
-		//intent.putExtra("gameRoleDeck", gameRoleDeck);
-		//intent.putExtra("gameBuildingDeck", gameBuildingDeck);
-		//intent.putExtra("players", players);
-		  
 		startActivity(intent);
 		finish();
 

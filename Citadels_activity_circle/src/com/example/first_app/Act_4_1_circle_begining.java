@@ -15,8 +15,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Act_game_screen extends Activity{
-	  Logger log = Logger.getLogger(Act_game_screen.class.getName());
+public class Act_4_1_circle_begining extends Activity{
+	  Logger log = Logger.getLogger(Act_4_1_circle_begining.class.getName());
 	  
 	  Game_func gameFunction;
 	  
@@ -36,17 +36,13 @@ public class Act_game_screen extends Activity{
 		  
 		  Intent intent = getIntent();
 		  
-		  ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
-		  ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
-		  
-		  ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
+		  ArrayList<Role> gameRoleDeck = ((CityApp)getApplication()).getRoleDeck();
+		  ArrayList<Player> players = ((CityApp)getApplication()).getPlayers();
 		  
 		  gameFunction = new Game_func(this);
 		  
 		  Collections.sort(players, new PlayerCompareId());
-		 
 		  gameRoleDeckTurn = gameFunction.CreateRoleDeckTurn(gameRoleDeck, players.size());
-		  
 		  openedRoleTurn = new ArrayList <Role>();
 		  
 		  for (int i=0; i<8-players.size()-2;i++){
@@ -55,13 +51,11 @@ public class Act_game_screen extends Activity{
 		  }
 		  gameRoleDeckTurn.trimToSize();
 		  
-		  final Intent intent_next = new Intent(Act_game_screen.this, Act_role_choice.class);
+		  final Intent intent_next = new Intent(Act_4_1_circle_begining.this, Act_4_2_role_choice.class);
 		  
-		  intent_next.putExtra("gameRoleDeck", gameRoleDeck);
-		  intent_next.putExtra("openedRoleTurn", openedRoleTurn);
+		  ((CityApp)getApplication()).setOpenedRoles(openedRoleTurn);
+		  
 		  intent_next.putExtra("gameRoleDeckTurn", gameRoleDeckTurn);
-		  intent_next.putExtra("gameBuildingDeck", gameBuildingDeck);
-		  intent_next.putExtra("players", players);
 		  
 		  LinearLayout.LayoutParams lpMatchContent = new LinearLayout.LayoutParams (LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		  lpMatchContent.gravity = Gravity.LEFT;

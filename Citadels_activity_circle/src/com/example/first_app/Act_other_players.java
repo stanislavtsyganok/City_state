@@ -21,9 +21,7 @@ public class Act_other_players extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		Intent intent = getIntent();
-		
-		players = intent.getParcelableArrayListExtra("players");
+		players = ((CityApp)getApplication()).getPlayers();
 		setContentView(R.layout.results);
 		
 		tableL = (TableLayout) findViewById(R.id.result_table);

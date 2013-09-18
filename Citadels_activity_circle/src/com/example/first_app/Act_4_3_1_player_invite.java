@@ -14,9 +14,9 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Act_player_invite extends Activity {
+public class Act_4_3_1_player_invite extends Activity {
 	
-	Logger log = Logger.getLogger(Act_game_screen.class.getName());
+	Logger log = Logger.getLogger(Act_4_1_circle_begining.class.getName());
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -29,16 +29,8 @@ public class Act_player_invite extends Activity {
 		  
 		  Intent intent = getIntent();
 		  
-		  ArrayList<Role> gameRoleDeck = intent.getParcelableArrayListExtra("gameRoleDeck");
-		  ArrayList<Role> gameRoleDeckTurn = intent.getParcelableArrayListExtra("gameRoleDeckTurn");
-		  ArrayList<Role> openedRoleTurn = intent.getParcelableArrayListExtra("openedRoleTurn");
-		  ArrayList<Building> gameBuildingDeck = intent.getParcelableArrayListExtra("gameBuildingDeck");
-		  
-		  ArrayList<Player> players = intent.getParcelableArrayListExtra("players");
-		  		  
+		  ArrayList<Player> players = ((CityApp)getApplication()).getPlayers();
 		  int iterator_turn = intent.getIntExtra("iterator_turn", 0);
-		  final boolean isLastTurn = intent.getBooleanExtra("isLastTurn", false);
-			
 		  
 		  LinearLayout.LayoutParams lpMatchContent = new LinearLayout.LayoutParams (LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		  lpMatchContent.gravity = Gravity.LEFT;
@@ -48,15 +40,9 @@ public class Act_player_invite extends Activity {
 		  tv.setLayoutParams(lpMatchContent);
 		  linL.addView(tv);
 		  
-		  final Intent next_intent = new Intent(this, Act_action_choice.class);
-		  next_intent.putExtra("isLastTurn", isLastTurn);
+		  final Intent next_intent = new Intent(this, Act_4_3_2_action_choice.class);
 		  next_intent.putExtra("iterator_turn", iterator_turn);
-		  next_intent.putExtra("gameRoleDeck", gameRoleDeck);
-		  next_intent.putExtra("openedRoleTurn", openedRoleTurn);
-		  next_intent.putExtra("gameRoleDeckTurn", gameRoleDeckTurn);
-		  next_intent.putExtra("gameBuildingDeck", gameBuildingDeck);
-		  next_intent.putExtra("players", players);
-		  
+
 		  linL.setOnTouchListener(new OnTouchListener() {
 				
 				@Override

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class Citadels_db_helper extends SQLiteOpenHelper  {
-	Logger log = Logger.getLogger(Act_game_screen.class.getName());
+	Logger log = Logger.getLogger(Act_4_1_circle_begining.class.getName());
 		
 	static final String dbName = "Citadels_db";
 	static final int dbVersion = 44;
